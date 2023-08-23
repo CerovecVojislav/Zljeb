@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
    <head>
       <!-- basic -->
       <meta charset="utf-8">
@@ -33,6 +33,7 @@
    <body>
       <h1>this is dashboard</h1>
       <div >
+
       <div>
       <form>
          <p>name</p>
@@ -59,5 +60,28 @@
       </form>
    </div>
 </div>
+<h1>Item List</h1>
+<div>
+<th:block th:if="${disc.empty}">
+    <p>Diskografija je prazna.</p>
+</th:block>
+
+<ul th:if="${not disc.empty}">
+    <li th:each="item : ${disc}"> <!-- Loop through the list -->
+        <span th:text="${item}"></span>
+    </li>
+</ul>
+</div>
+<div>
+   <th:block th:if="${tour.empty}">
+       <p>Diskografija je prazna.</p>
+   </th:block>
+   
+   <ul th:if="${not disc.empty}">
+       <li th:each="item : ${tour}"> <!-- Loop through the list -->
+           <span th:text="${item}"></span>
+       </li>
+   </ul>
+   </div>
    </body>
 </html>

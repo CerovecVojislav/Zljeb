@@ -27,7 +27,8 @@ private IAutentication autentications;
     public String Dashboard(Model model){
         List<Touring> tour = touring.findAll();
         List<Discography> disc = discography.findAll();
-
+        model.addAttribute("disc", disc);
+        model.addAttribute("tour", tour);
         return "dashboard";
     }
     @RequestMapping("/login")
