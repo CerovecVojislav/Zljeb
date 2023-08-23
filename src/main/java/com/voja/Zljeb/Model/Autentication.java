@@ -11,9 +11,18 @@ public class Autentication {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
+    // AdminUser is already used by db, so we are using AdminUser
+
     public String AdminUser;
     public String Email;
     public String Password;
+
+    
+    public Autentication(){
+        this.AdminUser="null";
+        this.Password="null";
+        this.Email="null";
+    }
     public Autentication(String user, String password, String email){
         this.AdminUser = user;
         this.Password = password;

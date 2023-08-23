@@ -7,8 +7,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-
 
 @Entity
 public class Discography {
@@ -21,9 +19,6 @@ public class Discography {
     @Lob
     public byte[] Cover;
 
-    public Discography(){
-        
-    }
     public Discography(String name, Date date, byte[] cover){
         this.Name = name;
         this.Date = date;
