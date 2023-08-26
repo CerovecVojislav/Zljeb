@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import java.util.Date;
 
 
 @Entity
@@ -15,11 +13,12 @@ public class Discography {
     public Long id;
 
     public String Name;
-    public Date Date;
-    @Lob
-    public byte[] Cover;
+    public String Date;
+    public String Cover;
+    public Discography(){
 
-    public Discography(String name, Date date, byte[] cover){
+    }
+    public Discography(String name, String date, String cover){
         this.Name = name;
         this.Date = date;
         this.Cover = cover;
@@ -27,19 +26,19 @@ public class Discography {
     public String getName(){
         return this.Name;
     }
-    public Date getDate(){
+    public String getDate(){
         return this.Date;
     }
-    public byte[] getCover(){
+    public String getCover(){
         return this.Cover;
     }
     public void setName(String name){
         this.Name = name;
     }
-    public void setDate(Date date){
+    public void setDate(String date){
         this.Date = date;
     }
-    public void setCover(byte[] cover){
+    public void setCover(String cover){
         this.Cover = cover;
     }
 

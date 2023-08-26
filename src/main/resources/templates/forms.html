@@ -31,34 +31,37 @@
    </head>
    <!-- body -->
    <body>
-      <h1>this is dashboard</h1>
 
-<h1>Item List</h1>
+      <h1>this is Forms</h1>
+
 <div>
-<th:block th:if="${disc.empty}">
-    <p>Diskografija je prazna.</p>
-    <p th:text="@{error}"></p>
-</th:block>
+    <div >
 
-<ul th:if="${not disc.empty}">
-    <li th:each="item : ${disc}"> <!-- Loop through the list -->
-        <span th:text="${item.name}"></span>
-        <span th:text="${item.date}"></span>
-        <img th:src="@{'/image/' + ${imageName}}" alt="Item Cover"/>
-    </li>
-      
-</ul>
+    <div>
+    <form action="#" th:action="@{/createdisc}" method="post" enctype="multipart/form-data">
+       <p>name</p>
+       <input type="text" id="name" name="name" required/>
+       <p>date</p>
+       <input type="date" id="date" name="date" required/>
+       <p>cover</p>
+       <input type="file" id="cover" name="cover" accept=".jpg, .jpeg" required/><br><br>
+       <input type="submit" value="Submit">
+    </form>
+ </div>
+    <br><br><br><br>
+    <div>
+    <form>
+       <p>Enter name:</p>
+       <input type="text"><br>
+       <p>Enter date:</p>
+       <input type="date"><br>
+       <p>Enter location:</p>
+       <input type="text"><br><br>
+
+       <input type="submit">
+
+    </form>
+ </div>
 </div>
-<div>
-   <th:block th:if="${tour.empty}">
-       <p>Tour je prazna.</p>
-   </th:block>
-   
-   <ul th:if="${not disc.empty}">
-       <li th:each="item : ${tour}"> <!-- Loop through the list -->
-           <span th:text="${item}"></span>
-       </li>
-   </ul>
-   </div>
    </body>
 </html>

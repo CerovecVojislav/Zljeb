@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
-import com.voja.Zljeb.Interface.IAutentication;
 import com.voja.Zljeb.Interface.IDiscography;
 import com.voja.Zljeb.Interface.ITouring;
 import com.voja.Zljeb.Model.Discography;
@@ -21,8 +20,6 @@ public class WelcomeController {
     private IDiscography discograhpy;
     @Autowired
     private ITouring touring;
-    @Autowired
-    private IAutentication autentication;
 
 
     @RequestMapping("/")
