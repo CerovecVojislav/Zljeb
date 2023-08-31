@@ -40,9 +40,9 @@ public class FileSystemStorageService implements StorageService {
             try(InputStream inputStream= file.getInputStream()){
                 Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
             }
-        }
+            }
             catch (IOException e ){
-                throw new StorageExceptions("Failed to store a file: ", e);
+                throw new StorageExceptions("Failed to store a file! ", e);
             }
     }
     @Override
@@ -88,7 +88,7 @@ public class FileSystemStorageService implements StorageService {
 			Files.createDirectories(rootLocation);
 		}
 		catch (IOException e) {
-			throw new StorageExceptions("Could not initialize storage", e);
+			throw new StorageExceptions("Could not initialize storage. ", e);
 		}
 	}
     

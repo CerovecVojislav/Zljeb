@@ -37,14 +37,13 @@
 <div>
 <th:block th:if="${disc.empty}">
     <p>Diskografija je prazna.</p>
-    <p th:text="@{error}"></p>
 </th:block>
 
 <ul th:if="${not disc.empty}">
     <li th:each="item : ${disc}"> <!-- Loop through the list -->
         <span th:text="${item.name}"></span>
         <span th:text="${item.date}"></span>
-        <img th:src="@{'/image/' + ${imageName}}" alt="Item Cover"/>
+        <img width="50px" height="50px" th:src="@{'/files/' + ${item.cover}}" alt="Item Cover"/>
     </li>
       
 </ul>
