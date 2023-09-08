@@ -50,16 +50,16 @@
  </div>
     <br><br><br><br>
     <div>
-    <form>
+      <form action="/createtour" method="POST" enctype="multipart/form-data">
        <p>Enter name:</p>
-       <input type="text"><br>
+       <input type="text" id="name" name="name" required><br>
        <p>Enter date:</p>
-       <input type="date"><br>
+       <input type="date" id="date" name="date" required><br>
        <p>Enter location:</p>
-       <input type="text"><br><br>
-
-       <input type="submit">
-
+       <input type="text" id="location" name="location" required><br>
+       <P>Insta link:</P>
+       <input type="text" id="link" name="link" required><br><br>
+       <input type="submit" value="pritisni">
     </form>
  </div>
 </div>

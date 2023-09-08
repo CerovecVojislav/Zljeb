@@ -44,6 +44,7 @@
         <span th:text="${item.name}"></span>
         <span th:text="${item.date}"></span>
         <img width="50px" height="50px" th:src="@{'/files/' + ${item.cover}}" alt="Item Cover"/>
+        <p><a href="/remove${itme.id}">remove</p>
     </li>
       
 </ul>
@@ -55,7 +56,10 @@
    
    <ul th:if="${not disc.empty}">
        <li th:each="item : ${tour}"> <!-- Loop through the list -->
-           <span th:text="${item}"></span>
+           <span th:text="${item.TouringName}"></span>
+           <span th:text="${item.location}"></span>
+           <span th:text="${item.date}"></span>
+           <span th:text="${item.instaLink}"></span>
        </li>
    </ul>
    </div>

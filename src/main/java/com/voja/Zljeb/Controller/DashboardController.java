@@ -30,11 +30,10 @@ import java.util.stream.Collectors;
 public class DashboardController {
 
     private final StorageService storageService;
-    	@Autowired
+    @Autowired
 	public DashboardController(StorageService storageService) {
 		this.storageService = storageService;
 	}
-
     @Autowired
     private ITouring touring;
     @Autowired
@@ -77,4 +76,16 @@ public class DashboardController {
         
         return "redirect:/dashboard";
         }
+
+        
+        @PostMapping("/createtour")
+        public String CreateTour(@RequestParam("name") String name,
+                                @RequestParam("location") String location,
+                                @RequestParam("date") String date,
+                                @RequestParam("link") String link){
+            Touring tour = new Touring(name, location, date, link);
+            touring.save(tour);                   
+            return "redirect:/dashboard";
+        }
+
 }
