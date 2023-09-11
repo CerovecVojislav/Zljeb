@@ -32,7 +32,6 @@ public class AuthenticationController {
     @PostMapping("/verify")
     public String Verify(@RequestParam("user") String user,
                         @RequestParam("password") String password){
-    Autentication Zljeb = new Autentication("admin", "Zljeb69!", "zljeb@gmail.com");
         if(UserChech(user, password)){  
         authenticationBool = true;
         return "redirect:/dashboard";
