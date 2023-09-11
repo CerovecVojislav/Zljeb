@@ -38,9 +38,14 @@ public class DashboardController {
     private ITouring touring;
     @Autowired
     private IDiscography discography;
+    @Autowired
+    public AuthenticationController authenticationController;
 
     @GetMapping("/dashboard")
     public String Dashboard(Model model){
+        if(!authenticationController.authenticationBool){
+            return "redirect:/ ";
+        }
         List<Touring> tour = touring.findAll();
         List<Discography> disc = discography.findAll();
         model.addAttribute("disc", disc);
@@ -49,6 +54,9 @@ public class DashboardController {
     }
     @RequestMapping("/forms")
     public String Forms(Model model)throws IOException{
+        if(!authenticationController.authenticationBool){
+            return "redirect:/ ";
+        }
         		model.addAttribute("files", storageService.loadAll().map(
 				path -> MvcUriComponentsBuilder.fromMethodName(DashboardController.class,
 						"serveFile", path.getFileName().toString()).build().toUri().toString())
@@ -58,13 +66,13 @@ public class DashboardController {
     @RequestMapping("/files/{filename:.+}")
     @ResponseBody
 	public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
-
 		Resource file = storageService.loadAsResource(filename);
 		return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
 				"attachment; filename=\"" + file.getFilename() + "\"").body(file);
 	}
 
         @PostMapping("/createdisc")
+        
         public String CreateDisc(@RequestParam("name") String name,
                                 @RequestParam("date") String date,
                                 @RequestParam("cover") MultipartFile file)
