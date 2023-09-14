@@ -30,38 +30,60 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body>
-      <h1>this is dashboard</h1>
+   <body class="forms">
+    <div class="login">   
+        <div class="container mx-auto">
+              <div class="container">       
+                <h1>Dashboard</h1>
+                    <h2>Item List</h2>
+                    <div>
+                    <th:block th:if="${disc.empty}">
+                    <h3>Diskografija je prazna.</h3>
+                    </th:block>
+                    <table th:if="${not disc.empty}">
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Cover</th>
+                            <th>Option</th>
+                        </tr>
+                        <tr th:each="item : ${disc}">
+                            <td><p th:text="${item.name}"></p></td>
+                            <td><p th:text="${item.date}"></p></td>
+                            <td><img th:src="@{'/files/' + ${item.cover}}"></td>
+                            <td><p><a th:href="@{'/removedisc' + ${item.id}}">remove</p></td>
+                        </tr>
+                    </table>
+                    </div>
+                    <br><br><br>
 
-<h1>Item List</h1>
-<div>
-<th:block th:if="${disc.empty}">
-    <p>Diskografija je prazna.</p>
-</th:block>
-
-<ul th:if="${not disc.empty}">
-    <li th:each="item : ${disc}"> <!-- Loop through the list -->
-        <span th:text="${item.name}"></span>
-        <span th:text="${item.date}"></span>
-        <img width="50px" height="50px" th:src="@{'/files/' + ${item.cover}}" alt="Item Cover"/>
-        <p><a href="/remove${itme.id}">remove</p>
-    </li>
-      
-</ul>
-</div>
-<div>
-   <th:block th:if="${tour.empty}">
-       <p>Tour je prazna.</p>
-   </th:block>
-   
-   <ul th:if="${not disc.empty}">
-       <li th:each="item : ${tour}"> <!-- Loop through the list -->
-           <span th:text="${item.TouringName}"></span>
-           <span th:text="${item.location}"></span>
-           <span th:text="${item.date}"></span>
-           <span th:text="${item.instaLink}"></span>
-       </li>
-   </ul>
-   </div>
-   </body>
+                    <div>
+                    <th:block th:if="${tour.empty}">
+                    <h3>Tour je prazna.</h3>
+                    </th:block>  
+                    <table th:if="${not tour.empty}">
+                        <tr>
+                            <th>Touring Name</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Insta Link</th>
+                        </tr>
+                        <tr th:each="item : ${tour}">
+                            <td><p th:text="${item.TouringName}"></p></td>
+                            <td><p th:text="${item.location}"></p></td>
+                            <td><p th:href="${item.date}"></p></td>
+                            <td><p th:href="${item.instaLink}"></p></td>
+                            <td><p><a th:href="@{'/removetour' + ${item.id}}">remove</p></td>
+                        </tr>
+                    </table>
+                    </div>
+                    <h1><b><a th:href="@{/forms}">Enter data</a></b></h1>
+                    <br>
+                    <br>
+                    <h1><b><a th:href="@{/logout}">Logout</a></b></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
 </html>

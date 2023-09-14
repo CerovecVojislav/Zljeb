@@ -38,4 +38,10 @@ public class WelcomeController {
         model.addAttribute("data", data);
         return "discography";
     }
+    @RequestMapping("/tours")
+    public String Touring(Model model){
+        List<Touring> data = touring.findAll();
+        model.addAttribute("data", data);
+        return "touring";
+    }
 }

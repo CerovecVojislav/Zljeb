@@ -8,10 +8,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Contact| Zljeb</title>
+      <title>Error | Zljeb</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
-      <meta name="author" content="">
+      <meta name="author" content="Zljeb Projekat">
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <!-- style css -->
@@ -19,7 +19,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+      <link rel="icon" href="images/favicon.jpg" type="image/x-icon" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
@@ -59,19 +59,16 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/}">Home</a>
+                                 <a class="nav-link" tf:href="#services">Services </a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/tours}">Tours</a>
+                                 <a class="nav-link" th:href="@{/discography}"> Our  Work</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" th:href="@{/contact}">Contact</a>
                               </li>                              
                               <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
+                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
                               </li>
                            </ul>
                         </div>
@@ -87,48 +84,57 @@
       <section class="banner_main">
          <div class="container-fluid">
             <div class="row d_flex">
-               <div class="col-md-7">
+               <div class="col-md-8">
                   <div class="text-bg">
                      <div class="padding_lert">
-                        <h1>Get in touch, <br> we love to hear from you!</h1>
+                        <h1>Opps.... Something went wrong. Do you want to go back?</h1><br>
+                        <a th:href="@{/}">Home Page</a>
                      </div>
-                  </div>
-               </div>
-               <div class="col-md-4 bah">
-                  <div class="contac_detel">
-                     <h1><b>   You can find us here:</b></h1></br>
-                     <h1>📧: zljeb.projekat@gmail.com</h1><br>
-                     <h1>👤: facebook.com/zljeb</h1><br>
-                     <h1>📷: instagram.com/zljeb.projekat</h1>
                   </div>
                </div>
             </div>
          </div>
       </section>
       <!-- end banner -->
-      <div class="elfsight-app-aaf9a7ed-0c6b-44ff-908d-7e8a6011116e"></div>
+
       <!--  footer -->
       <footer>
          <div class="footer">
             <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-2 col-md-1"><a href="https://www.facebook.com/zljeb"><img src="images/facebook.png" alt=""></a></div>
-                  <div class="col-2 col-md-1"><a href="https://www.instagram.com/zljeb.project/"><img src="images/instagram.png" alt=""></a></div>
-                  <div class="col-2 col-md-1"><a href="https://www.youtube.com/@zljeb.project"><img src="images/youtube.png" alt=""></a></div>
-               </div>
-               <div class="justify-content-center">
-                  <br>
-                  <p><b>Question?</b></p> 
-               </div>
-               <div>
-                  <p>Drop us a line at <a href="mailto: zljeb.projekat@gmail.com">zljeb.projekat@gmail.com</a></p>
+               <div class="row">
+                  <div class="col-md-5">
+                     <div class="multipurpose">
+                        <h3>Let’s  <br>Talk <br> Business</h3>
+                     </div>
+                  </div>
+                  <div class="col-md-7 sm_none">
+                     <div class="contac_detel">
+                        <ul>
+                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
+                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <div class="multipurpose">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                     </div>
+                  </div>
+                  <div class="col-md-7 sm_show">
+                     <div class="contac_detel">
+                        <ul>
+                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
+                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
+                        </ul>
+                     </div>
+                  </div>
                </div>
             </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>Cerovec Vojislav, 2023. <a href="https://www.linkedin.com/in/vojislav-cerovec/"> Click here for LinkedIn.</a></p>
+                        <p>Copyright 2020 All Right Reserved By<a href="https://html.design/"> Free Html Templates</a></p>
                      </div>
                   </div>
                </div>
@@ -142,6 +148,5 @@
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
-      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
    </body>
 </html>

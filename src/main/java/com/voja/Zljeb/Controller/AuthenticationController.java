@@ -3,11 +3,16 @@ package com.voja.Zljeb.Controller;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.voja.Zljeb.Interface.IAutentication;
 import com.voja.Zljeb.Model.Autentication;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
+
 
 
 @Controller
@@ -17,13 +22,17 @@ public class AuthenticationController {
     private IAutentication autentication;
 
     @RequestMapping("/login")
-    public String Login(){
+    public String Login(@CookieValue(name = "login", defaultValue = "null")String cookie){
+        if(cookie.equals("Zljeb")){
+            authenticationBool = true;
+            return "redirect:/dashboard";
+        }
         return "login";
     }
     public boolean UserChech(String user, String password){
         List<Autentication> List = autentication.findAll();
         for(Autentication admin : List){
-            if(admin.AdminUser == user || admin.Password == password){
+            if(user.equals(admin.AdminUser) || password.equals(admin.Password)){
                 return true;
             }
         }
@@ -31,10 +40,15 @@ public class AuthenticationController {
     }
     @PostMapping("/verify")
     public String Verify(@RequestParam("user") String user,
-                        @RequestParam("password") String password){
+                        @RequestParam("password") String password,
+                        @RequestParam("remember") boolean cookie,
+                        HttpServletResponse response){
         if(UserChech(user, password)){  
-        authenticationBool = true;
-        return "redirect:/dashboard";
+            authenticationBool = true;
+            Cookie oreo = new Cookie("login", "Zljeb");
+            oreo.setMaxAge(3600);
+            response.addCookie(oreo);
+            return "redirect:/dashboard";
         }
         else{
         return "redirect:/login";
@@ -42,7 +56,10 @@ public class AuthenticationController {
     }
 
     @RequestMapping("logout")
-    public String Logout(){
+    public String Logout(HttpServletResponse response){
+        Cookie oreo = new Cookie("login", null);
+        oreo.setMaxAge(0);
+        response.addCookie(oreo);
         authenticationBool = false;
         return "redirect:/";
     }

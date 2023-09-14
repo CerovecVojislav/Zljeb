@@ -44,7 +44,7 @@ public class DashboardController {
     @GetMapping("/dashboard")
     public String Dashboard(Model model){
         if(!authenticationController.authenticationBool){
-            return "redirect:/ ";
+            return "redirect:/login";
         }
         List<Touring> tour = touring.findAll();
         List<Discography> disc = discography.findAll();
@@ -55,7 +55,7 @@ public class DashboardController {
     @RequestMapping("/forms")
     public String Forms(Model model)throws IOException{
         if(!authenticationController.authenticationBool){
-            return "redirect:/ ";
+            return "redirect:/login";
         }
         		model.addAttribute("files", storageService.loadAll().map(
 				path -> MvcUriComponentsBuilder.fromMethodName(DashboardController.class,
@@ -84,7 +84,16 @@ public class DashboardController {
         
         return "redirect:/dashboard";
         }
-
+        @RequestMapping("/removedisc{id}")
+        public String RemoveD(@PathVariable("id") long id){
+            discography.deleteById(id);
+            return "redirect:/dashboard";
+        }
+        @RequestMapping("/removetour{id}")
+        public String RemoveT(@PathVariable("id") long id){
+            touring.deleteById(id);
+            return "redirect:/dashboard";
+        }
         
         @PostMapping("/createtour")
         public String CreateTour(@RequestParam("name") String name,
