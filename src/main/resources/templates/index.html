@@ -8,10 +8,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>bluene</title>
+      <title>Home | Zljeb</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
-      <meta name="author" content="">
+      <meta name="author" content="Zljeb Projekat">
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <!-- style css -->
@@ -19,7 +19,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.jpg" type="image/gif" />
+      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
@@ -59,16 +59,19 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item">
-                                 <a class="nav-link" tf:href="#services">Services </a>
+                                 <a class="nav-link" th:href="@{/}">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/discography}"> Our  Work</a>
+                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/tours}">Tours</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" th:href="@{/contact}">Contact</a>
                               </li>                              
                               <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
+                                 <a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
                               </li>
                            </ul>
                         </div>
@@ -87,13 +90,12 @@
                <div class="col-md-7">
                   <div class="text-bg">
                      <div class="padding_lert">
-                        <i><img src="images/btn.png" alt="#"/></i>
-                        <h1>A Digital Creative Agency  <br>Landing Page</h1>
-                        <a href="Javascript:void(0)">Read More</a>
+                        <h1>Your Ultimate Progressive Disco Destination!</h1>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0kbBU3ey5IkKwPvDHXJOry?utm_source=generator" width="95%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                      </div>
                   </div>
                </div>
-               <div class="col-md-5 bah">
+               <div class="col-md-4 bah">
                   <div class="bann_img">
                      <figure><img src="images/ep_0_cover.png" alt="#"/></figure>
                   </div>
@@ -102,13 +104,33 @@
          </div>
       </section>
       <!-- end banner -->
+            <!-- solutions -->
+            <div class="solutions">
+               <div class="container">
+                  <div class="row d_flex">
+                     <div class="col-md-7">
+                        <div class="titlepage">
+                           <h2>Solutions for every <br>Specific need</h2>
+                           <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five</span>
+                           <a class="read_more" href="Javascript:void(0)">Read More</a>
+                        </div>
+                     </div>
+                     <div class="col-md-5">
+                        <div class="solutions_img">
+                           <figure><img src="images/solusan.jpg" alt="#"/></figure>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end solutions -->
       <!-- service -->
       <div id="services" class="service">
          <div class="container-fluid">
             <div class="row d_flex">
                <div class="col-md-5">
                   <div class="service_img">
-                     <figure><img src="images/TheZljeb.jpg" alt="#"/></figure>
+                     <figure><iframe width="560" height="315" src="https://www.youtube.com/embed/3H5rtwc3epE?si=fBo2CFyooU1O6gmK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></figure>
                   </div>
                </div>
                <div class="col-md-7">
@@ -122,100 +144,29 @@
          </div>
       </div>
       <!-- end service -->
-      <!-- solutions -->
-      <div class="solutions">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>Solutions for every <br>Specific need</h2>
-                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five</span>
-                     <a class="read_more" href="Javascript:void(0)">Read More</a>
-                  </div>
-               </div>
-               <div class="col-md-5">
-                  <div class="solutions_img">
-                     <figure><img src="images/solusan.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end solutions -->
-      <!-- work -->
-      <div id="work" class="work">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>See More Our Work</h2>
-                     <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a istribution of letters, content here', making it look like readable English. Many desktop publishing packages </span>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work1.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work2.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work3.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work4.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end work -->
+      <div class="elfsight-app-aaf9a7ed-0c6b-44ff-908d-7e8a6011116e"></div>
       <!--  footer -->
       <footer>
          <div class="footer">
             <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                     <div class="multipurpose">
-                        <h3>Let’s  <br>Talk <br> Business</h3>
-                     </div>
-                  </div>
-                  <div class="col-md-7 sm_none">
-                     <div class="contac_detel">
-                        <ul>
-                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
-                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-12">
-                     <div class="multipurpose">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                     </div>
-                  </div>
-                  <div class="col-md-7 sm_show">
-                     <div class="contac_detel">
-                        <ul>
-                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
-                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
-                        </ul>
-                     </div>
-                  </div>
+               <div class="row justify-content-center">
+                  <div class="col-2 col-md-1"><a href="https://www.facebook.com/zljeb"><img src="images/facebook.png" alt=""></a></div>
+                  <div class="col-2 col-md-1"><a href="https://www.instagram.com/zljeb.project/"><img src="images/instagram.png" alt=""></a></div>
+                  <div class="col-2 col-md-1"><a href="https://www.youtube.com/@zljeb.project"><img src="images/youtube.png" alt=""></a></div>
+               </div>
+               <div class="justify-content-center">
+                  <br>
+                  <p><b>Question?</b></p> 
+               </div>
+               <div>
+                  <p>Drop us a line at <a href="mailto: zljeb.projekat@gmail.com">zljeb.projekat@gmail.com</a></p>
                </div>
             </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>Copyright 2020 All Right Reserved By<a href="https://html.design/"> Free Html Templates</a></p>
+                        <p>Cerovec Vojislav, 2023. <a href="https://www.linkedin.com/in/vojislav-cerovec/"> Click here for LinkedIn.</a></p>
                      </div>
                   </div>
                </div>
@@ -229,5 +180,7 @@
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+
    </body>
 </html>
