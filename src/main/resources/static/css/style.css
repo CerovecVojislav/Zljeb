@@ -271,14 +271,14 @@ button {
 
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
-     color: #e70139;
+     color: #b901e7;
 }
 
 .navigation.navbar-dark .navbar-nav .active>.nav-link,
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #e70139;
+     color: #b901e7;
 }
 
 /** banner section **/
@@ -328,7 +328,7 @@ button {
 .text-bg a {
      font-size: 17px;
      background-color: #fff;
-     color: #ff283f;
+     color: #b901e7;
      font-weight: 600;
      padding: 22px 0px;
      width: 100%;
@@ -340,8 +340,8 @@ button {
 }
 
 .text-bg a:hover {
-     background-color: #ff283f;
-     color: #fff;
+     background-color: #b901e7;
+     color: #ffffff;
      transition: ease-in all 0.5s;
 }
 
@@ -386,7 +386,7 @@ button {
 }
 
 .read_more:hover {
-     background: #e70139 !important;
+     background: #b901e7 !important;
      color: #fff !important;
      transition: ease-in all 0.5s;
 }
@@ -441,7 +441,10 @@ button {
 /** solutions section **/
 
 .solutions {
-     background: #020001;
+     background-size: cover;
+     background-image: url("/images/TheZljeb.jpg");
+     background-repeat: no-repeat;
+     background-attachment: fixed;
      padding: 90px 0;
      margin-top: 90px;
 }
@@ -550,7 +553,7 @@ button {
 .contac_detel ul li {
      padding-bottom: 25px;
      font-size: 45px;
-     color: #e70139;
+     color: #b901e7;
      line-height: 30px;
 }
 
@@ -559,15 +562,15 @@ button {
 }
 
 .contac_detel ul li a {
-     color: #e70139;
+     color: #b901e7;
 }
 
 .contac_detel ul li a:hover {
-     color: #000;
+     color: #ffffff;
 }
 
 .copyright {
-     background: #e70139;
+     background: #b901e7;
      margin-top: 90px;
 }
 
@@ -586,6 +589,29 @@ button {
 .copyright a:hover {
      color: #000;
 }
-
-
+.login{
+     max-width: 400px;
+     margin: 0 auto;
+     padding: 20px;
+     background-color: #f4f4f4be;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     align-items: center;
+}
+.dash{
+     margin: 0 auto;
+     padding: 20px;
+     background-color: #f4f4f4be;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     align-items: center;
+}
+.forms{
+     background-image: url("/images/banner.jpg");
+}
+table, th, td {
+     border:1px solid black;
+}
 /** end footer **/
