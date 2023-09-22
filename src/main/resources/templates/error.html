@@ -31,11 +31,6 @@
    </head>
    <!-- body -->
    <body class="main-layout" style="background-color: black;">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
-      <!-- end loader -->
       <!-- header -->
       <header>
          <!-- header inner -->
@@ -59,17 +54,17 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item">
-                                 <a class="nav-link" tf:href="#services">Services </a>
+                                 <a class="nav-link" th:href="@{/}">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/discography}"> Our  Work</a>
+                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/tours}">Tours</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" th:href="@{/contact}">Contact</a>
                               </li>                              
-                              <li class="nav-item">
-                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
-                              </li>
                            </ul>
                         </div>
                      </nav>
@@ -86,8 +81,8 @@
             <div class="row d_flex">
                <div class="col-md-8">
                   <div class="text-bg">
-                     <div class="padding_lert">
-                        <h1>Opps.... Something went wrong. Do you want to go back?</h1><br>
+                     <div style="text-align: center;" class="padding_lert">
+                        <h1>Opps.... Something went wrong. Go back?</h1><br>
                         <a th:href="@{/}">Home Page</a>
                      </div>
                   </div>
@@ -97,52 +92,36 @@
       </section>
       <!-- end banner -->
 
-      <!--  footer -->
       <footer>
          <div class="footer">
             <div class="container">
-               <div class="row">
-                  <div class="col-md-5">
-                     <div class="multipurpose">
-                        <h3>Let’s  <br>Talk <br> Business</h3>
-                     </div>
-                  </div>
-                  <div class="col-md-7 sm_none">
-                     <div class="contac_detel">
-                        <ul>
-                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
-                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-12">
-                     <div class="multipurpose">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                     </div>
-                  </div>
-                  <div class="col-md-7 sm_show">
-                     <div class="contac_detel">
-                        <ul>
-                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
-                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
-                        </ul>
-                     </div>
-                  </div>
+               <div class="row justify-content-center">
+                  <div class="col-2 col-md-1"><a href="https://www.instagram.com/zljeb.project/"><img src="images/instagram.png"></a></div>
+                  <div class="col-2 col-md-1"><a href="https://www.facebook.com/zljeb"><img src="images/facebook.png"></a></div>
+                  <div class="col-2 col-md-1"><a href="https://www.youtube.com/@zljeb.project"><img src="images/youtube.png"></a></div>
+                  <div class="col-2 col-md-1"><a href="https://open.spotify.com/artist/7kMmPqOxMLkqi0HTAtpyGb"><img src="images/spotify.png"></a></div>
+                  <div class="col-2 col-md-1"><a href="https://music.apple.com/us/artist/žljeb/1702033550"><img src="images/apple.png"></a></div>
+               </div>
+               <div class="justify-content-center">
+                  <br>
+                  <p><b>Question?</b></p> 
+               </div>
+               <div>
+                  <p>Drop us a line at <a href="mailto: zljeb.projekat@gmail.com">zljeb.projekat@gmail.com</a></p>
                </div>
             </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>Copyright 2020 All Right Reserved By<a href="https://html.design/"> Free Html Templates</a></p>
+                        <p>Cerovec Vojislav, 2023. <a href="https://www.linkedin.com/in/vojislav-cerovec/"> Click here for LinkedIn.</a></p>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
+      <!-- end footer -->      <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>

@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.voja.Zljeb.Interface.IAutentication;
 import com.voja.Zljeb.Model.Autentication;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
-
 
 
 @Controller
@@ -29,29 +29,20 @@ public class AuthenticationController {
         }
         return "login";
     }
-    public boolean UserChech(String user, String password){
-        List<Autentication> List = autentication.findAll();
-        for(Autentication admin : List){
-            if(user.equals(admin.AdminUser) || password.equals(admin.Password)){
-                return true;
-            }
-        }
-        return false;
-    }
     @PostMapping("/verify")
     public String Verify(@RequestParam("user") String user,
                         @RequestParam("password") String password,
-                        @RequestParam("remember") boolean cookie,
+                        @RequestParam(name = "remember",required = false) boolean remember,
                         HttpServletResponse response){
         if(UserChech(user, password)){  
             authenticationBool = true;
-            Cookie oreo = new Cookie("login", "Zljeb");
-            oreo.setMaxAge(3600);
-            response.addCookie(oreo);
+            if(remember){
+                createCookie(response);
+            }
             return "redirect:/dashboard";
         }
         else{
-        return "redirect:/login";
+            return "redirect:/login";
         }
     }
 
@@ -62,6 +53,20 @@ public class AuthenticationController {
         response.addCookie(oreo);
         authenticationBool = false;
         return "redirect:/";
+    }
+    public boolean UserChech(String user, String password){
+        List<Autentication> List = autentication.findAll();
+        for(Autentication admin : List){
+            if(user.equals(admin.AdminUser) || password.equals(admin.Password)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public void createCookie(HttpServletResponse response){
+                Cookie oreo = new Cookie("login", "Zljeb");
+                oreo.setMaxAge(3600);
+                response.addCookie(oreo);
     }
 }
 

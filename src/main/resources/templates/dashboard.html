@@ -30,6 +30,51 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a th:href="@{/}"><img src="images/logo.png" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/}">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/tours}">Tours</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/contact}">Contact</a>
+                              </li>                              
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+    <br><br><br><br>
    <body class="forms">
     <div class="login">   
         <div class="container mx-auto">
@@ -85,5 +130,37 @@
             </div>
         </div>
     </div>
+
+    <footer>
+      <div class="footer">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-2 col-md-1"><a href="https://www.instagram.com/zljeb.project/"><img src="images/instagram.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://www.facebook.com/zljeb"><img src="images/facebook.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://www.youtube.com/@zljeb.project"><img src="images/youtube.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://open.spotify.com/artist/7kMmPqOxMLkqi0HTAtpyGb"><img src="images/spotify.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://music.apple.com/us/artist/žljeb/1702033550"><img src="images/apple.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://www.tiktok.com/@zljeb.project?_t=8fmDtkDpTK1&_r=1"><img src="images/tiktok.png"></a></div>
+            </div>
+            <div class="justify-content-center">
+               <br>
+               <p><b>Question?</b></p> 
+            </div>
+            <div>
+               <p>Drop us a line at <a href="mailto: zljeb.projekat@gmail.com">zljeb.projekat@gmail.com</a></p>
+            </div>
+         </div>
+         <div class="copyright">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <p>Cerovec Vojislav, 2023. <a href="https://www.linkedin.com/in/vojislav-cerovec/"> Click here for LinkedIn.</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- end footer -->
     </body>
 </html>

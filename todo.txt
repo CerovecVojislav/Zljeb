@@ -1,16 +1,16 @@
 todo:
-homepage
+homepage*
 |diskografija
-|slike, pesme
-|kontakt
-||subject
-||title
-||booking
+|slike, pesme*
+|kontakt*
+||subject*
+||title*
+||booking*
 ||touring
-dashboard
-|dodavanje albuma
-|podesavanje
-chet
-loging sistem
-botchet
+dashboard*
+|dodavanje albuma*
+|podesavanje*
+chet*
+loging sistem*
+botchet*
 25.9.2023 deadline
