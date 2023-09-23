@@ -86,22 +86,19 @@
                     <h3>Diskografija je prazna.</h3>
                     </th:block>
                     <table th:if="${not disc.empty}">
-                        <tr>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Cover</th>
-                            <th>Option</th>
-                        </tr>
-                        <tr th:each="item : ${disc}">
-                            <td><p th:text="${item.name}"></p></td>
-                            <td><p th:text="${item.date}"></p></td>
-                            <td><img th:src="@{'/files/' + ${item.cover}}"></td>
-                            <td><p><a th:href="@{'/removedisc' + ${item.id}}">remove</p></td>
-                        </tr>
+                     <ul th:each="item : ${disc}">
+                        <li><h3>grantType: </h3><p th:text="${item.grantType}"></p></li>
+                        <li><h3>clientId: </h3><p th:text="${item.clientId}"></p></li>
+                        <li><h3>clientSecret: </h3><p th:text="${item.clientSecret}"></p></li>
+                        <li><h3>zljebId: </h3><p th:text="${item.zljebId}"></p></li>
+                        <li><h3>tokenApiUrl: </h3><p th:text="${item.tokenApiUrl}"></p></li>
+                        <li><h3>albumApiUrl: </h3><p th:text="${item.albumApiUrl}"></p></li>
+                        <li><h3>tracksApiUrl: </h3><p th:text="${item.tracksApiUrl}"></p></li>
+                        <li><a th:href="@{'/removedisc' + ${item.id}}">remove</a></li>
+                     </ul>
                     </table>
                     </div>
                     <br><br><br>
-
                     <div>
                     <th:block th:if="${tour.empty}">
                     <h3>Tour je prazna.</h3>

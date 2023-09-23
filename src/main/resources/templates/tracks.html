@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Discography | Zljeb</title>
+      <title>Contact | Zljeb</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -30,8 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout">
-
+   <body class="main-layout" style="background-color: black;">
       <!-- header -->
       <header>
          <!-- header inner -->
@@ -77,54 +76,32 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- banner -->
-      <section class="banner_main_disc">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-md-9">
+      <section class="banner_main">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class="col-md-7">
                   <div class="text-bg">
                      <div class="padding_lert">
-                        <h1>Your Ultimate Progressive Disco Destination!</h1>
-                        </div>
-                  </div>
-               </div>
-               <div class="col-md-4 bah">
-                  <div class="bann_img">
+                        <div >
+                            <div class="row">
+                               <div class="col-md-2">
+                               </div>
+                               <div class="col-md-3">
+                               </div>
+                               <div class="col-md-6" >
+                                <ul th:each="item : ${track}">
+                                    <a th:href="${item.link}"><li th:text="${item.name}"></li></a>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </section>
       <!-- end banner -->
-            <!-- solutions -->
-            <div class="solutions">
-               <div class="container-fluid">
-                  <div class="row justify-content-center">
-                     <div class="col-12">
-                        <div class="titlepage">
-                           <div class="col-md-12">
-                           <div th:each="item : ${album}" class="album">
-                              <div class="row">
-                                 <div class="col-md-2">
-                                    <img th:src="${item.image}" width="600px" height="600px">
-                                 </div>
-                                 <div class="col-md-3">
-                                 </div>
-                                 <div class="col-md-6">
-                                    <b><h1 th:text="${item.name}"></h1></b>
-                                    <h3 th:text="${item.total_tracks}"></h3>
-                                    <h3 th:text="${item.date}"></h3>
-                                    <a th:href="'/tracks'+${item.link}"><h3>link</h3></a>
-                                 </div>
-                              </div>
-                           </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-      <!-- end solutions -->
-      <!-- service -->
       <div class="elfsight-app-aaf9a7ed-0c6b-44ff-908d-7e8a6011116e"></div>
 
       <footer>
@@ -165,6 +142,5 @@
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-
    </body>
 </html>

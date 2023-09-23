@@ -16,60 +16,53 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.voja.Zljeb.Model.Album;
+import com.voja.Zljeb.Model.Discography;
 import com.voja.Zljeb.Model.Track;
 
 @Service
 public class ApiSpotifyService implements SpotifyService{
-    public String token;
-    private String tracksJson;
-    private String albumJson;
+    private String output; 
     private RestTemplate restTemplate = new RestTemplate();
     ObjectMapper objectMapper = new ObjectMapper();
-
-    public String GetToken(){
-    HttpHeaders headers = new HttpHeaders();
+    
+    public String GetToken(Discography disc){  
     try{
-        String spotifyApiEndpoint = "https://accounts.spotify.com/api/token"; 
+        HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
         body.add("grant_type", "client_credentials");
-        body.add("client_id", "5afc7d66a16542c892d73b20fd299686");
-        body.add("client_secret", "70efbc3d05324d60bf33349418465a20");
+        body.add("client_id", disc.clientId);
+        body.add("client_secret", disc.clientSecret);
         HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<>(body, headers);
         ResponseEntity<String> responseEntity = restTemplate.exchange(
-            spotifyApiEndpoint, 
+            disc.tokenApiUrl, 
             HttpMethod.POST,
             requestEntity,
             String.class);        
             System.out.println(responseEntity.getBody());
-            token = responseEntity.getBody().substring(17, 132);
-            System.out.println(token);;
-            return token;  
+            return responseEntity.getBody().substring(17, 132);
         } catch(Exception e ){
             return "Error! "+e;
         }
     }
-    public String GetAlbumsJson(){
+    public String GetAlbumsJson(Discography disc, String token){
         try{
-        String zljebID="7kMmPqOxMLkqi0HTAtpyGb";
-        String albumUrl = "https://api.spotify.com/v1/artists/"+zljebID+"/albums";
         HttpHeaders response = new HttpHeaders();
         response.setBearerAuth(token);
         HttpEntity<?> entity = new HttpEntity<>(response);
         ResponseEntity<String> responseEntity = restTemplate.exchange(
-            albumUrl, 
+            disc.albumApiUrl.replace("{id}", disc.zljebId), 
             HttpMethod.GET,
             entity,
             String.class);
-        albumJson = responseEntity.getBody();
         System.out.println(responseEntity.getBody());
+        return responseEntity.getBody();
         }catch(Exception e){
             return "Error: " +e;
         }
-        return albumJson;
     }
     
-    public List<Album> GetAlbums(){
+    public List<Album> GetAlbums(String albumJson){
         List<Album> albums = new LinkedList<Album>();  
         try{        
             JsonNode jsonNode = objectMapper.readTree(albumJson);
@@ -90,26 +83,24 @@ public class ApiSpotifyService implements SpotifyService{
         }
             return albums;
     }
-    public String GetTracksJson(String id){        
+    public String GetTracksJson(Discography disc, String id, String token){       
         try{
-        String tracksUrl = "https://api.spotify.com/v1/albums/"+id+"/tracks";
         HttpHeaders response = new HttpHeaders();
         response.setBearerAuth(token);
         HttpEntity<?> entity = new HttpEntity<>(response);
         ResponseEntity<String> responseEntity = restTemplate.exchange(
-            tracksUrl, 
+            disc.tracksApiUrl.replace("{id}", id),
             HttpMethod.GET,
             entity,
             String.class);
         System.out.println(responseEntity.getBody());
-        tracksJson = responseEntity.getBody();
-        return responseEntity.getBody();
+        output = responseEntity.getBody();
         } catch(Exception e) {
             e.printStackTrace();
         }
-        return tracksJson;
+        return output;
     }
-    public List<Track> GetTracks(String id){
+    public List<Track> GetTracks(String tracksJson){
         List<Track> tracks = new LinkedList<Track>();   
         try{                     
             JsonNode jsonNode = objectMapper.readTree(tracksJson);

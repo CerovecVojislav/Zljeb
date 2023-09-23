@@ -761,3 +761,29 @@ org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-21
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
 2023-09-19 14:50:32 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-23 01:28:51 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER [*]TALBE DISCOGRAPHY\000d\000aDROP COLUMN ID"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW, DOMAIN"; SQL statement:
+ALTER TALBE DISCOGRAPHY
+DROP COLUMN ID [42001-214]
+2023-09-23 01:28:53 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER [*]TALBE DISCOGRAPHY\000d\000aDROP COLUMN ID"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW, DOMAIN"; SQL statement:
+ALTER TALBE DISCOGRAPHY
+DROP COLUMN ID [42001-214]
+2023-09-23 01:28:53 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER [*]TALBE DISCOGRAPHY\000d\000aDROP COLUMN ID"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW, DOMAIN"; SQL statement:
+ALTER TALBE DISCOGRAPHY
+DROP COLUMN ID [42001-214]
+2023-09-23 01:28:54 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER [*]TALBE DISCOGRAPHY\000d\000aDROP COLUMN ID"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW, DOMAIN"; SQL statement:
+ALTER TALBE DISCOGRAPHY
+DROP COLUMN ID [42001-214]
+2023-09-23 01:28:54 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER [*]TALBE DISCOGRAPHY\000d\000aDROP COLUMN ID"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW, DOMAIN"; SQL statement:
+ALTER TALBE DISCOGRAPHY
+DROP COLUMN ID [42001-214]
+2023-09-23 01:30:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-23 01:38:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-23 01:38:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

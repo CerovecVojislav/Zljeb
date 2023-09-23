@@ -57,7 +57,7 @@ public class AuthenticationController {
     public boolean UserChech(String user, String password){
         List<Autentication> List = autentication.findAll();
         for(Autentication admin : List){
-            if(user.equals(admin.AdminUser) || password.equals(admin.Password)){
+            if(user.equals(admin.AdminUser) && password.equals(admin.Password)){
                 return true;
             }
         }

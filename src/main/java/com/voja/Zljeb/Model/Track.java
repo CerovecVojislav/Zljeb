@@ -1,9 +1,9 @@
 package com.voja.Zljeb.Model;
 
 public class Track {
-    String id;
-    String name;
-    String link;
+    public String id;
+    public String name;
+    public String link;
     public Track(String id, String name, String link){
         this.id=id;
         this.name=name;
