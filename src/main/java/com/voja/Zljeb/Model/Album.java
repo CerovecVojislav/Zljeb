@@ -1,12 +1,21 @@
 package com.voja.Zljeb.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
     public String name;
     public String link;
     public String image;
     public String date;
     public String total_tracks;
-
+    
     public Album(String name ,String link, String image, String date, int total){
         this.name = name;
         this.link = link;
@@ -18,14 +27,15 @@ public class Album {
         else if (total<=6) {
             this.total_tracks = "EP";
         } else {
-            this.total_tracks = "LP";
+            this.total_tracks = "Album";
         }
     }
     public Album(){
-        this.name = null;
-        this.link = null;
-        this.image = null;
-        this.date = null;
+        this.name = "Secret";
+        this.link = "/";
+        this.image = "/images/secret.png";
+        this.date = "X-X-XXXX";
+        this.total_tracks="Album";
     }
     public String getName(){
         return this.name;

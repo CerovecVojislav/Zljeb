@@ -484,16 +484,22 @@ button {
 }
 .album{
      background-color: #3d3d3dbd;
-     padding: 50px;
-     margin: 30px 300px;
+     padding: 20px;
      border-radius: 20px;
+     margin-bottom: 10px;
+     font-family: Tahoma, "sans-serif";
 }
+
 .album h1{
-     font-size: 58px;
+     font-size: 48px;
      color: #e7e7e7;
 }
 .album h3{
      color: #cfcfcf;
+}
+.album img{
+     color: #cfcfcf;
+     border:1px;
 }
 
 .solutions .titlepage {

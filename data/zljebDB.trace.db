@@ -787,3 +787,121 @@ org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-21
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
 2023-09-23 01:38:31 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 00:21:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ALBUM(\000d\000a    ID INTEGER [*]PRIMARY_KEY,\000d\000a    NAME VARCHAR(255),\000d\000a    LINK VARCHAR(255),\000d\000a    IMAGE VARCHAR(255),\000d\000a    DATE VARCHAR(255),\000d\000a    TOTAL_TRACKS VARCHAR(255)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ALBUM(
+    ID INTEGER PRIMARY_KEY,
+    NAME VARCHAR(255),
+    LINK VARCHAR(255),
+    IMAGE VARCHAR(255),
+    DATE VARCHAR(255),
+    TOTAL_TRACKS VARCHAR(255) [42001-214]
+2023-09-24 00:21:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*])"; SQL statement:
+) [42000-214]
+2023-09-24 00:23:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ALBUM(\000d\000a    ID NUMBER [*]PRIMARY_KEY,\000d\000a    NAME VARCHAR(255),\000d\000a    LINK VARCHAR(255),\000d\000a    IMAGE VARCHAR(255),\000d\000a    DATE VARCHAR(255),\000d\000a    TOTAL_TRACKS VARCHAR(255)"; expected "(, ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ALBUM(
+    ID NUMBER PRIMARY_KEY,
+    NAME VARCHAR(255),
+    LINK VARCHAR(255),
+    IMAGE VARCHAR(255),
+    DATE VARCHAR(255),
+    TOTAL_TRACKS VARCHAR(255) [42001-214]
+2023-09-24 00:23:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*])"; SQL statement:
+) [42000-214]
+2023-09-24 00:23:34 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ALBUM(\000d\000a    ID NUMBER [*]PRIMARY_KEY,\000d\000a    NAME VARCHAR(255),\000d\000a    LINK VARCHAR(255),\000d\000a    IMAGE VARCHAR(255),\000d\000a    DATE VARCHAR(255),\000d\000a    TOTAL_TRACKS VARCHAR(255)\000d\000a)"; expected "(, ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ALBUM(
+    ID NUMBER PRIMARY_KEY,
+    NAME VARCHAR(255),
+    LINK VARCHAR(255),
+    IMAGE VARCHAR(255),
+    DATE VARCHAR(255),
+    TOTAL_TRACKS VARCHAR(255)
+) [42001-214]
+2023-09-24 00:24:36 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ALBUM(\000d\000a    ID NUMBER [*]PRIMARY_KEY,\000d\000a    NAME VARCHAR(255),\000d\000a    LINK VARCHAR(255),\000d\000a    IMAGE VARCHAR(255),\000d\000a    DATE VARCHAR(255),\000d\000a    TOTAL_TRACKS VARCHAR(255)\000d\000a)"; expected "(, ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ALBUM(
+    ID NUMBER PRIMARY_KEY,
+    NAME VARCHAR(255),
+    LINK VARCHAR(255),
+    IMAGE VARCHAR(255),
+    DATE VARCHAR(255),
+    TOTAL_TRACKS VARCHAR(255)
+) [42001-214]
+2023-09-24 00:25:17 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ALBUM(\000d\000a    ID INT AUTO_INCREMENT [*]PRIMARY_KEY,\000d\000a    NAME VARCHAR(255),\000d\000a    LINK VARCHAR(255),\000d\000a    IMAGE VARCHAR(255),\000d\000a    DATE VARCHAR(255),\000d\000a    TOTAL_TRACKS VARCHAR(255)\000d\000a)"; expected "(, NOT NULL, NULL, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE ALBUM(
+    ID INT AUTO_INCREMENT PRIMARY_KEY,
+    NAME VARCHAR(255),
+    LINK VARCHAR(255),
+    IMAGE VARCHAR(255),
+    DATE VARCHAR(255),
+    TOTAL_TRACKS VARCHAR(255)
+) [42001-214]
+2023-09-24 18:50:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:50:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:51:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:51:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:54:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:54:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:54:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:54:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:57:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:57:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:58:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:58:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:59:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 18:59:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:00:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:00:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:02:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:02:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:07:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:07:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:07:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:08:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:08:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:11:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:11:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:27:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:27:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:43:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:43:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:43:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-24 19:43:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

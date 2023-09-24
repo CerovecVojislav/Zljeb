@@ -4,15 +4,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.voja.Zljeb.Interface.IAlbums;
 import com.voja.Zljeb.Interface.IDiscography;
 import com.voja.Zljeb.Interface.ITouring;
 import com.voja.Zljeb.Model.Album;
 import com.voja.Zljeb.Model.Touring;
-import com.voja.Zljeb.Model.Track;
 import com.voja.Zljeb.Model.Discography;
+import com.voja.Zljeb.spotify.WebRequestHelper;
 import com.voja.Zljeb.spotify.SpotifyService;
 
 import org.springframework.ui.Model;
@@ -25,8 +25,15 @@ import org.springframework.ui.Model;
 public class WelcomeController {
     @Autowired
     private IDiscography discography;
+
+
     @Autowired
     private ITouring touring;
+
+
+    @Autowired
+    private IAlbums albums;
+
 
     private SpotifyService ss;
     @Autowired
@@ -37,7 +44,6 @@ public class WelcomeController {
     
     private String token;
     private String albumsJson;
-    private String tracksJson;
 
     @RequestMapping("/")
     public String Index(Model model){
@@ -51,11 +57,21 @@ public class WelcomeController {
     }
     @GetMapping("/discography")
     public String Discography(Model model){
-        
         List<Discography> disc = discography.findAll();
-        token = ss.GetToken(disc.get(0));
-        albumsJson = ss.GetAlbumsJson(disc.get(0), token);
+        token = WebRequestHelper.GetToken(disc.get(0));
+        albumsJson = WebRequestHelper.GetAlbumsJson(disc.get(0), token);
         List<Album> album = ss.GetAlbums(albumsJson);
+        if(album.size()==0){
+            album = albums.findAll();
+        }
+        else{
+            albums.deleteAll();
+            albums.saveAll(album);
+        }
+        if(album.size()%2!=0){
+            albums.save(new Album());
+            album = albums.findAll();
+        }
         model.addAttribute("album", album);
         return "discography";
     }
@@ -64,13 +80,5 @@ public class WelcomeController {
         List<Touring> data = touring.findAll();
         model.addAttribute("data", data);
         return "touring";
-    }
-    @RequestMapping("/tracks{id}")
-    public String Tracks(@PathVariable("id") String id, Model model){
-        List<Discography> disc = discography.findAll();
-        tracksJson = ss.GetTracksJson(disc.get(0), id, token);    
-        List<Track> track = ss.GetTracks(tracksJson);
-        model.addAttribute("track", track);
-        return "gallery";
     }
 }
