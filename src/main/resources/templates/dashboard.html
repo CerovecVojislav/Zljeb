@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
    <head>
       <!-- basic -->
       <meta charset="utf-8">
@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>bluene</title>
+      <title>Dashboard | Zljeb</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -19,7 +19,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.jpg" type="image/gif" />
+      <link rel="icon" href="images/favicon.png" type="image/x-icon" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
@@ -30,12 +30,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
-      <!-- end loader -->
       <!-- header -->
       <header>
          <!-- header inner -->
@@ -46,7 +40,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <a th:href="@{/}"><img src="images/logo.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -59,11 +53,17 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item">
-                                 <a class="nav-link" href="#services">Services </a>
+                                 <a class="nav-link" th:href="@{/}">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#work"> Our  Work</a>
+                                 <a class="nav-link" th:href="@{/discography}">Discography</a>
                               </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/tours}">Tours</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" th:href="@{/contact}">Contact</a>
+                              </li>                              
                            </ul>
                         </div>
                      </nav>
@@ -74,154 +74,92 @@
       </header>
       <!-- end header inner -->
       <!-- end header -->
-      <!-- banner -->
-      <section class="banner_main">
-         <div class="container-fluid">
-            <div class="row d_flex">
-               <div class="col-md-7">
-                  <div class="text-bg">
-                     <div class="padding_lert">
-                        <i><img src="images/btn.png" alt="#"/></i>
-                        <h1>A Digital Creative Agency  <br>Landing Page</h1>
-                        <a href="Javascript:void(0)">Read More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-5 bah">
-                  <div class="bann_img">
-                     <figure><img src="images/ep_0_cover.png" alt="#"/></figure>
-                  </div>
-               </div>
+    <br><br><br><br>
+   <body class="forms">
+    <div class="login">   
+        <div class="container mx-auto">
+              <div class="container">       
+                <h1>Dashboard</h1>
+                    <h2>Item List</h2>
+                    <div>
+                    <th:block th:if="${disc.empty}">
+                    <h3>Diskografija je prazna.</h3>
+                    </th:block>
+                    <table th:if="${not disc.empty}">
+                     <ul th:each="item : ${disc}">
+                        <li><h3>grantType: </h3><p th:text="${item.grantType}"></p></li>
+                        <li><h3>clientId: </h3><p th:text="${item.clientId}"></p></li>
+                        <li><h3>clientSecret: </h3><p th:text="${item.clientSecret}"></p></li>
+                        <li><h3>zljebId: </h3><p th:text="${item.zljebId}"></p></li>
+                        <li><h3>tokenApiUrl: </h3><p th:text="${item.tokenApiUrl}"></p></li>
+                        <li><h3>albumApiUrl: </h3><p th:text="${item.albumApiUrl}"></p></li>
+                        <li><h3>tracksApiUrl: </h3><p th:text="${item.tracksApiUrl}"></p></li>
+                        <li><a th:href="@{'/removedisc' + ${item.id}}">remove</a></li>
+                     </ul>
+                    </table>
+                    </div>
+                    <br><br><br>
+                    <div>
+                    <th:block th:if="${tour.empty}">
+                    <h3>Tour je prazna.</h3>
+                    </th:block>  
+                    <table th:if="${not tour.empty}">
+                        <tr>
+                            <th>Touring Name</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Insta Link</th>
+                        </tr>
+                        <tr th:each="item : ${tour}">
+                            <td><p th:text="${item.TouringName}"></p></td>
+                            <td><p th:text="${item.location}"></p></td>
+                            <td><p th:href="${item.date}"></p></td>
+                            <td><p th:href="${item.instaLink}"></p></td>
+                            <td><p><a th:href="@{'/removetour' + ${item.id}}">remove</p></td>
+                        </tr>
+                    </table>
+                    </div>
+                    <br>
+                    <br>
+                    <h1><b><a th:href="@{/forms}">Enter data</a></b></h1>
+                    <br>
+                    <br>
+                    <h1><b><a th:href="@{/logout}">Logout</a></b></h1>
+                </div>
             </div>
-         </div>
-      </section>
-      <!-- end banner -->
-      <!-- service -->
-      <div id="services" class="service">
-         <div class="container-fluid">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <div class="service_img">
-                     <figure><img src="images/TheZljeb.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>Full Žljeb digital capbilities From end to end workflow</h2>
-                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five</span>
-                     <a class="read_more" href="Javascript:void(0)">Read More</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end service -->
-      <!-- solutions -->
-      <div class="solutions">
+        </div>
+    </div>
+   <!-- footer -->
+    <footer>
+      <div class="footer">
          <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>Solutions for every <br>Specific need</h2>
-                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five</span>
-                     <a class="read_more" href="Javascript:void(0)">Read More</a>
-                  </div>
-               </div>
-               <div class="col-md-5">
-                  <div class="solutions_img">
-                     <figure><img src="images/solusan.jpg" alt="#"/></figure>
-                  </div>
-               </div>
+            <div class="row justify-content-center">
+               <div class="col-2 col-md-1"><a href="https://www.instagram.com/zljeb.project/"><img src="images/instagram.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://www.facebook.com/zljeb"><img src="images/facebook.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://www.youtube.com/@zljeb.project"><img src="images/youtube.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://open.spotify.com/artist/7kMmPqOxMLkqi0HTAtpyGb"><img src="images/spotify.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://music.apple.com/us/artist/žljeb/1702033550"><img src="images/apple.png"></a></div>
+               <div class="col-2 col-md-1"><a href="https://www.tiktok.com/@zljeb.project?_t=8fmDtkDpTK1&_r=1"><img src="images/tiktok.png"></a></div>
+            </div>
+            <div class="justify-content-center">
+               <br>
+               <p><b>Question?</b></p> 
+            </div>
+            <div>
+               <p>Drop us a line at <a href="mailto: zljeb.projekat@gmail.com">zljeb.projekat@gmail.com</a></p>
             </div>
          </div>
-      </div>
-      <!-- end solutions -->
-      <!-- work -->
-      <div id="work" class="work">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>See More Our Work</h2>
-                     <span>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a istribution of letters, content here', making it look like readable English. Many desktop publishing packages </span>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work1.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work2.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work3.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="our_work">
-                     <figure><img src="images/work4.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end work -->
-      <!--  footer -->
-      <footer>
-         <div class="footer">
+         <div class="copyright">
             <div class="container">
                <div class="row">
-                  <div class="col-md-5">
-                     <div class="multipurpose">
-                        <h3>Let’s  <br>Talk <br> Business</h3>
-                     </div>
-                  </div>
-                  <div class="col-md-7 sm_none">
-                     <div class="contac_detel">
-                        <ul>
-                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
-                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
-                        </ul>
-                     </div>
-                  </div>
                   <div class="col-md-12">
-                     <div class="multipurpose">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                     </div>
-                  </div>
-                  <div class="col-md-7 sm_show">
-                     <div class="contac_detel">
-                        <ul>
-                           <li><img src="images/call.png" alt="#"/>+91 1234567890</li>
-                           <li><a href="Javascript:void(0)"> <img src="images/gmail.png" alt="#"/>demo@gmail.com</a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>Copyright 2020 All Right Reserved By<a href="https://html.design/"> Free Html Templates</a></p>
-                     </div>
+                     <p>Cerovec Vojislav, 2023. <a href="https://www.linkedin.com/in/vojislav-cerovec/"> Click here for LinkedIn.</a></p>
                   </div>
                </div>
             </div>
          </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
+      </div>
+   </footer>
+   <!-- end footer -->
+    </body>
 </html>
