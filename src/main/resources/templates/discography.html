@@ -79,16 +79,10 @@
       <!-- banner -->
       <section class="banner_main_disc">
          <div class="container">
-            <div class="row ">
+            <div class="row justify-content-center">
                <div class="col-md-9">
                   <div class="text-bg">
-                     <div class="padding_lert">
                         <h1>Your Ultimate Progressive Disco Destination!</h1>
-                        </div>
-                  </div>
-               </div>
-               <div class="col-md-4 bah">
-                  <div class="bann_img">
                   </div>
                </div>
             </div>
@@ -99,14 +93,14 @@
       <div class="solutions">
          <div class="container-fluid">
             <div class="row justify-content-center">
-               <div class="col-5" th:each="item : ${album}">
+               <div class="col-lg-5" th:each="item : ${album}">
                   <a th:href="${item.link}">
                   <div class="album">
                      <div class="row">
-                        <div class="col-4">
+                        <div class="col-lg-4">
                            <a th:href="${item.link}"><img th:src="${item.image}"></a>
                         </div>
-                        <div>
+                        <div class="col-md-8">
                            <b><h1 th:text="${item.name}"></h1></b>
                            <h3 th:text="${item.total_tracks}"></h3>
                            <h3 th:text="${item.date}"></h3>

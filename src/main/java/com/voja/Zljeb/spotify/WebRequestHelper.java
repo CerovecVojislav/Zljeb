@@ -14,6 +14,7 @@ import com.voja.Zljeb.Model.Discography;
 public class WebRequestHelper {
     private static RestTemplate restTemplate = new RestTemplate();
     private static HttpHeaders headers = new HttpHeaders();
+    
     public static String GetToken(Discography disc){  
     try{
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);

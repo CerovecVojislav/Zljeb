@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.voja.Zljeb.Interface.IAutentication;
 import com.voja.Zljeb.Model.Autentication;
+import com.voja.Zljeb.Repository.IAutentication;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.voja.Zljeb.Model.Album;
 
 @Service
-public class ApiSpotifyService implements SpotifyService{
+public class SpotifyObjectCreatingService implements SpotifyService{
     ObjectMapper objectMapper = new ObjectMapper();    
     public List<Album> GetAlbums(String albumJson){
         List<Album> albums = new LinkedList<Album>();  

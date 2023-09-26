@@ -6,11 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.voja.Zljeb.Interface.IAlbums;
-import com.voja.Zljeb.Interface.IDiscography;
-import com.voja.Zljeb.Interface.ITouring;
 import com.voja.Zljeb.Model.Album;
 import com.voja.Zljeb.Model.Touring;
+import com.voja.Zljeb.Repository.IAlbums;
+import com.voja.Zljeb.Repository.IDiscography;
+import com.voja.Zljeb.Repository.ITouring;
 import com.voja.Zljeb.Model.Discography;
 import com.voja.Zljeb.spotify.WebRequestHelper;
 import com.voja.Zljeb.spotify.SpotifyService;

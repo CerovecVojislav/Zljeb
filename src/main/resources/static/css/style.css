@@ -308,6 +308,19 @@ button {
      padding-top: 13%;
      padding-bottom: 150px;
 }
+.banner_main .container{
+     margin-top: 7%;
+}
+.banner_main_contact {
+     background: url(../images/banner.jpg);
+     display: flex;
+     align-content: center;
+     align-items: center;
+     background-size: 100% 100%;
+     padding-top: 13%;
+     padding-bottom: 150px;
+}
+
 .banner_main_tours{
      background: url(../images/touring.jpg);
      display: flex;
@@ -326,6 +339,11 @@ button {
      padding-top: 13%;
      padding-bottom: 150px;
 }
+.banner_main iframe{
+          position:relative;
+          overflow: hidden;
+          width: 100%;
+        }
 
 .text-bg {
      max-width: 669px;
@@ -407,6 +425,7 @@ button {
 }
 
 .read_more {
+     border-radius:24px;
      font-size: 16px;
      background-color: #020001;
      color: #fff;
@@ -484,17 +503,17 @@ button {
 }
 .album{
      background-color: #3d3d3dbd;
-     padding: 20px;
-     border-radius: 20px;
+     padding: 2%;
+     border-radius: 15px;
      margin-bottom: 10px;
-     font-family: Tahoma, "sans-serif";
 }
 
 .album h1{
-     font-size: 48px;
+     font-size: 4vh;
      color: #e7e7e7;
 }
 .album h3{
+     font-size: 3vh;
      color: #cfcfcf;
 }
 .album img{

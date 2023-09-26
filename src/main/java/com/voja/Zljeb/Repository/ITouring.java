@@ -1,4 +1,4 @@
-package com.voja.Zljeb.Interface;
+package com.voja.Zljeb.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

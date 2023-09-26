@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.voja.Zljeb.Interface.IDiscography;
-import com.voja.Zljeb.Interface.ITouring;
+
 import com.voja.Zljeb.Model.Discography;
 import com.voja.Zljeb.Model.Touring;
+import com.voja.Zljeb.Repository.IDiscography;
+import com.voja.Zljeb.Repository.ITouring;
+
 import org.springframework.ui.Model;
 import java.io.IOException;
 import java.util.List;

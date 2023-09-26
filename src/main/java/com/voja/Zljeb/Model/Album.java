@@ -31,10 +31,10 @@ public class Album {
         }
     }
     public Album(){
-        this.name = "Secret";
+        this.name = "Progressive Disco";
         this.link = "/";
         this.image = "/images/secret.png";
-        this.date = "X-X-XXXX";
+        this.date = "2024";
         this.total_tracks="Album";
     }
     public String getName(){
