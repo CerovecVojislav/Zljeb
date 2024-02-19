@@ -2,7 +2,7 @@
 
 Link to website: https://zljebprojekat-jmcjvo74ba-od.a.run.app/
 
-![ezgif-5-af4f7fd0e3](https://github.com/CerovecVojislav/Zljeb/assets/84142643/779372ee-4193-4bbb-996c-694a5ddedbeb)
+![ezgif-5-af4f7fd0e3]([https://github.com/CerovecVojislav/Zljeb/assets/84142643/779372ee-4193-4bbb-996c-694a5ddedbeb](https://zljeb-service-pi4n256lzq-lz.a.run.app/))
 
 ### About
 This is a Spring Boot web application that serves as a official web site.
