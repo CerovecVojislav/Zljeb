@@ -1,8 +1,7 @@
 # Zljeb Official Website
 
-Link to website: https://zljebprojekat-jmcjvo74ba-od.a.run.app/
+Link to website: https://zljeb-service-pi4n256lzq-lz.a.run.app/
 
-![ezgif-5-af4f7fd0e3](https://zljeb-service-pi4n256lzq-lz.a.run.app/)
 
 ### About
 This is a Spring Boot web application that serves as a official web site.
